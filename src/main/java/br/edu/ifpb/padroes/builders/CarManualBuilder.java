@@ -17,41 +17,47 @@ import br.edu.ifpb.padroes.components.TripComputer;
  * configured with different features.
  */
 public class CarManualBuilder implements Builder {
-    private CarType type;
-    private int seats;
+    private CarType type = CarType.CITY_CAR;
+    private int seats = 5;
     private Engine engine;
-    private Transmission transmission;
+    private Transmission transmission = Transmission.MANUAL;
     private TripComputer tripComputer;
     private GPSNavigator gpsNavigator;
 
     @Override
-    public void setCarType(CarType type) {
+    public CarManualBuilder setCarType(CarType type) {
         this.type = type;
+        return this;
     }
 
     @Override
-    public void setSeats(int seats) {
+    public CarManualBuilder setSeats(int seats) {
         this.seats = seats;
+        return this;
     }
 
     @Override
-    public void setEngine(Engine engine) {
+    public CarManualBuilder setEngine(Engine engine) {
         this.engine = engine;
+        return this;
     }
 
     @Override
-    public void setTransmission(Transmission transmission) {
+    public CarManualBuilder setTransmission(Transmission transmission) {
         this.transmission = transmission;
+        return this;
     }
 
     @Override
-    public void setTripComputer(TripComputer tripComputer) {
+    public CarManualBuilder setTripComputer(TripComputer tripComputer) {
         this.tripComputer = tripComputer;
+        return this;
     }
 
     @Override
-    public void setGPSNavigator(GPSNavigator gpsNavigator) {
+    public CarManualBuilder setGPSNavigator(GPSNavigator gpsNavigator) {
         this.gpsNavigator = gpsNavigator;
+        return this;
     }
 
     public Manual getResult() {

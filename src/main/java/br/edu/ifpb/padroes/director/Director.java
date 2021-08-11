@@ -15,12 +15,17 @@ import br.edu.ifpb.padroes.components.TripComputer;
 public class Director {
 
     public void constructSportsCar(Builder builder) {
-        builder.setCarType(CarType.SPORTS_CAR);
-        builder.setSeats(2);
-        builder.setEngine(new Engine(3.0, 0));
-        builder.setTransmission(Transmission.SEMI_AUTOMATIC);
-        builder.setTripComputer(new TripComputer());
-        builder.setGPSNavigator(new GPSNavigator());
+        // fluent interface
+        builder.setCarType(CarType.SPORTS_CAR)
+                .setSeats(2)
+                .setEngine(new Engine(3.0, 0))
+                .setTransmission(Transmission.SEMI_AUTOMATIC)
+                .setGPSNavigator(new GPSNavigator());
+    }
+
+    public void constructFuscaCar(Builder builder) {
+        builder
+                .setEngine(new Engine(1, 10000000));
     }
 
     public void constructCityCar(Builder builder) {
